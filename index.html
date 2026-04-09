@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证：GAY DRIVERS</title>
+    
+    <link rel="preload" href="pic1.jpg" as="image">
+    <link rel="preload" href="pic2.jpg" as="image">
+    <link rel="preload" href="pic3.jpg" as="image">
+    <link rel="preload" href="AL15.jpg" as="image">
+
+    <style>
+        body { background:#f0f2f5; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; font-family:sans-serif; }
+        .box { width:350px; background:#fff; padding:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); position:relative; }
+        
+        /* 蓝色标题框 */
+        .blue-head { background:#4A90E2; color:#fff; padding:20px; margin-bottom:10px; }
+        .blue-head p { margin:0; font-size:14px; }
+        .blue-head h2 { margin:5px 0; font-size:24px; font-weight:bold; }
+
+        /* 九宫格 */
+        .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:4px; margin-bottom:10px; }
+        
+        .item { 
+            aspect-ratio: 1 / 1; 
+            background:#eee; 
+            cursor:pointer; 
+            position:relative; 
+            background-size: cover;      
+            background-position: center; 
+            background-repeat: no-repeat;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        /* 选中状态效果 */
+        .selected::after { 
+            content:'✓'; position:absolute; top:5px; left:5px; 
+            background:#4A90E2; color:#fff; width:22px; height:22px; 
+            border-radius:50%; display:flex; align-items:center; 
+            justify-content:center; border:2px solid #fff; z-index: 2; 
+        }
+        .selected { transform: scale(0.95); transition: 0.1s; border: 3px solid #4A90E2; }
+
+        button { background:#4A90E2; color:#fff; border:none; padding:12px; cursor:pointer; font-weight:bold; width:100%; font-size: 16px; margin-top: 5px; }
+        
+        /* 成功界面遮罩层 */
+        #win { display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; z-index:99; flex-direction:column; justify-content:center; align-items:center; padding: 20px; box-sizing: border-box; }
+        #win img { max-width:100%; max-height: 70%; border-radius:5px; object-fit: contain; }
+        #win h2 { color:#4A90E2; font-size:32px; margin:15px 0; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div id="win">
+        <img src="AL15.jpg" alt="Congrats!">
+        <h2>congrats!</h2>
+        <button onclick="location.reload()" style="width:auto; background:#999; padding: 5px 20px;">重新开始</button>
+    </div>
+
+    <div class="blue-head">
+        <p>请选择所有含有</p>
+        <h2>GAY DRIVERS 🏳️‍🌈</h2>
+        <p>的图片</p>
+    </div>
+
+    <div class="grid">
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic1.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic2.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic3.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic4.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic5.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic6.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic7.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic8.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('pic9.jpg')"></div>
+    </div>
+
+    <button onclick="check()">验证</button>
+</div>
+
+<script>
+    function toggle(el) {
+        el.classList.toggle('selected');
+    }
+
+    function check() {
+        const selected = document.querySelectorAll('.selected').length;
+        // 只有 9 张全选才成功
+        if (selected === 9) {
+            document.getElementById('win').style.display = 'flex';
+        } else {
+            alert('验证未通过，请全选 9 张图片！');
+        }
+    }
+</script>
+
+</body>
+</html>
