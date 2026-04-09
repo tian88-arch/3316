@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>验证：GAY DRIVERS</title>
     
-    <link rel="preload" href="pic1.jpg" as="image">
-    <link rel="preload" href="pic2.jpg" as="image">
-    <link rel="preload" href="pic3.jpg" as="image">
-    <link rel="preload" href="AL15.jpg" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic1.jpg" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic2.jpg" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic3.jpg" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/AL15.jpg" as="image">
 
     <style>
         body { background:#f0f2f5; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; font-family:sans-serif; }
@@ -56,7 +56,7 @@
 
 <div class="box">
     <div id="win">
-        <img src="AL15.jpg" alt="Congrats!">
+        <img src="https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/AL15.jpg" alt="Congrats!">
         <h2>congrats!</h2>
         <button onclick="location.reload()" style="width:auto; background:#999; padding: 5px 20px;">重新开始</button>
     </div>
@@ -68,15 +68,15 @@
     </div>
 
     <div class="grid">
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic1.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic2.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic3.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic4.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic5.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic6.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic7.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic8.jpg')"></div>
-        <div class="item" onclick="toggle(this)" style="background-image: url('pic9.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic1.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic2.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic3.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic4.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic5.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic6.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic7.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic8.jpg')"></div>
+        <div class="item" onclick="toggle(this)" style="background-image: url('https://cdn.jsdelivr.net/gh/tian88-arch/3316@main/pic9.jpg')"></div>
     </div>
 
     <button onclick="check()">验证</button>
@@ -89,11 +89,11 @@
 
     function check() {
         const selected = document.querySelectorAll('.selected').length;
-        // 只有 9 张全选才成功
+        // 判定全选 9 张图片成功
         if (selected === 9) {
             document.getElementById('win').style.display = 'flex';
         } else {
-            alert('验证未通过，请全选 9 张图片！');
+            alert('验证未通过，请全选图片！');
         }
     }
 </script>
